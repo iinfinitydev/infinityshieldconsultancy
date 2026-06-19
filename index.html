@@ -4,49 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Shield Fire Safety Consultancy LLC | UAE</title>
-    <meta name="description" content="House of Expertise in Fire Consultancy. 20 years of UK experience delivering expert-led, standards-driven fire safety solutions across the UAE.">
+    <meta name="description" content="Strategic fire safety consultancy delivering independent, technically rigorous advice for complex projects across the UAE.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body { font-family: 'Inter', system_ui, sans-serif; }
         .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
-        .nav-scrolled {
-            background-color: rgba(15, 23, 42, 0.95);
+        .nav-scrolled { 
+            background-color: rgba(255, 255, 255, 0.95); 
             -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px); 
         }
-        .service-card, .activity-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .service-card:hover, .activity-card:hover { transform: translateY(-6px); }
-        .gold-accent { color: #C9A227; }
-        .btn-gold { background-color: #C9A227; color: #0F172A; }
-        .btn-gold:hover { background-color: #B8971F; }
+
+        .service-card, .why-card, .reg-card, .partnership-card, .activity-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+            will-change: transform;
+        }
+        
+        /* Very aggressive pop - forced */
+        .service-card:hover, 
+        .why-card:hover, 
+        .reg-card:hover, 
+        .partnership-card:hover, 
+        .activity-card:hover {
+            transform: translateY(-20px) scale(1.12) !important;
+            box-shadow: 0 45px 90px -15px rgb(0 0 0 / 0.45), 
+                        0 25px 40px -10px rgb(0 0 0 / 0.35) !important;
+            z-index: 50 !important;
+        }
+
+        .process-step {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            padding: 14px 18px;
+            border-radius: 14px;
+        }
+        .process-step:hover {
+            transform: translateY(-6px) scale(1.04);
+            background-color: #f1f5f9;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gold-strip {
+            background: linear-gradient(to right, #C9A227, #E8D48B, #C9A227);
+            height: 4px;
+        }
+
+        .hero-bg {
+            background-image: url('assets/images/hero-background.webp');
+            background-size: cover;
+            background-position: center 25%;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-[#F8F5F0] text-slate-800">
 
     <!-- NAV -->
     <nav id="navbar" class="bg-white border-b border-slate-200 sticky top-0 z-50 transition-all">
         <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
-
-            <!-- Logo - Bigger -->
+            
             <div class="flex items-center gap-x-3">
-                <img src="assets/logos/consultancy-logo.png"
-                     alt="Infinity Shield Fire Safety Consultancy LLC"
+                <img src="assets/logos/consultancy-logo.png" 
+                     alt="Infinity Shield Fire Safety Consultancy LLC" 
                      class="h-14 w-auto">
             </div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                <a href="#services" class="nav-link text-slate-600 hover:text-slate-900">Services</a>
-                <a href="#regulatory" class="nav-link text-slate-600 hover:text-slate-900">Standards</a>
-                <a href="#activities" class="nav-link text-slate-600 hover:text-slate-900">Activities</a>
-                <a href="#why-us" class="nav-link text-slate-600 hover:text-slate-900">Why Us</a>
-                <a href="#contact" class="nav-link text-slate-600 hover:text-slate-900">Contact</a>
+            <div class="hidden md:flex items-center gap-x-3 text-sm font-medium text-slate-700">
+                <a href="#services" class="nav-link px-5 py-2 rounded-full hover:bg-[#C9A227]/10 hover:text-[#C9A227] transition-colors">Services</a>
+                <a href="#regulatory" class="nav-link px-5 py-2 rounded-full hover:bg-[#C9A227]/10 hover:text-[#C9A227] transition-colors">Standards</a>
+                <a href="#activities" class="nav-link px-5 py-2 rounded-full hover:bg-[#C9A227]/10 hover:text-[#C9A227] transition-colors">Activities</a>
+                <a href="#why-us" class="nav-link px-5 py-2 rounded-full hover:bg-[#C9A227]/10 hover:text-[#C9A227] transition-colors">Why Us</a>
+                <a href="#contact" class="nav-link px-5 py-2 rounded-full hover:bg-[#C9A227]/10 hover:text-[#C9A227] transition-colors">Contact</a>
             </div>
 
             <div class="flex items-center gap-x-4">
-                <a href="#contact"
-                   class="hidden md:inline-flex items-center px-6 py-3 text-sm font-semibold border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-2xl transition-colors">
+                <a href="#contact" 
+                   class="hidden md:inline-flex items-center px-6 py-3 text-sm font-semibold border border-[#C9A227] text-[#C9A227] hover:bg-[#C9A227] hover:text-white rounded-2xl transition-colors">
                     Request Consultation
                 </a>
 
@@ -57,7 +102,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-8 py-6">
             <div class="flex flex-col gap-y-4 text-sm font-medium">
                 <a href="#services" class="py-1 text-slate-600">Services</a>
@@ -71,33 +115,46 @@
 
     <!-- HERO -->
     <header class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('assets/images/hero-background.jpg')]">
-            <div class="absolute inset-0 bg-slate-950/75"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-950/30 to-transparent"></div>
-        </div>
+        <div class="hero-bg absolute inset-0"></div>
+        <div class="absolute inset-0 bg-[#C9A227]/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1F2937]/50 via-[#1F2937]/30 to-transparent"></div>
 
         <div class="relative max-w-screen-2xl mx-auto px-8 pt-16 pb-12 text-white z-10">
-            <div class="max-w-4xl">
-                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6 border border-white/20">
-                    <span class="text-sm font-medium tracking-wider">DUBAI • ABU DHABI • UAE</span>
-                </div>
+            <div class="max-w-3xl mx-auto text-center">
 
+                <!-- Main Headline -->
                 <h1 class="text-6xl md:text-7xl leading-[1.05] font-semibold tracking-tighter mb-6">
-                    Expert-led.<br>
-                    Standards-driven.<br>
-                    Compliance assured.
+                    Strategic fire safety<br>
+                    consultancy for<br>
+                    complex projects.
                 </h1>
 
-                <p class="max-w-xl text-xl text-slate-200 mb-10">
-                    House of Expertise in Fire Consultancy. With 20 years of experience from the United Kingdom, we bring international best practice, rigorous technical standards, and world-class fire engineering knowledge to the UAE.
+                <!-- Location Pill -->
+                <div class="flex justify-center mb-8">
+                    <div class="inline-flex items-center gap-x-3 bg-white/10 backdrop-blur-md px-5 py-2 rounded-3xl border border-white/30">
+                        <span class="text-sm font-medium tracking-[3px]">DUBAI</span>
+                        <span class="text-white/40">•</span>
+                        <span class="text-sm font-medium tracking-[3px]">ABU DHABI</span>
+                        <span class="text-white/40">•</span>
+                        <span class="text-sm font-medium tracking-[3px]">UAE</span>
+                    </div>
+                </div>
+
+                <!-- Stronger Paragraph -->
+                <p class="max-w-2xl mx-auto text-xl text-slate-200 mb-10 leading-relaxed">
+                    Delivering independent, technically rigorous fire safety consultancy — 
+                    backed by 20 years of UK expertise — to help clients achieve compliance, 
+                    reduce risk, and protect high-value assets across the UAE.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
-                            class="btn-gold px-9 py-4 font-semibold rounded-3xl text-lg inline-flex items-center justify-center gap-x-2">
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                            class="btn-gold px-9 py-4 font-semibold rounded-3xl text-lg inline-flex items-center justify-center gap-x-2 
+                                   hover:bg-[#D4AF37] hover:scale-[1.03] hover:shadow-xl transition-all duration-200">
                         Request a Consultation
                     </button>
-                    <button onclick="document.getElementById('activities').scrollIntoView({ behavior: 'smooth' })"
+                    <button onclick="document.getElementById('activities').scrollIntoView({ behavior: 'smooth' })" 
                             class="px-9 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl text-lg transition-all">
                         See Recent Activities
                     </button>
@@ -109,43 +166,44 @@
     <!-- TRUST BAR -->
     <div class="bg-white border-b">
         <div class="max-w-screen-2xl mx-auto px-8 py-6">
-            <div class="flex flex-wrap justify-center md:justify-between items-center gap-x-8 gap-y-4 text-sm">
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-x-10 gap-y-4 text-sm font-medium">
                 <div class="flex items-center gap-x-3">
-                    <i class="fa-solid fa-check-circle text-emerald-500 text-xl"></i>
-                    <span class="font-medium">Aligned with Dubai Civil Defence</span>
+                    <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                    <span>Aligned with Dubai Civil Defence</span>
                 </div>
                 <div class="flex items-center gap-x-3">
-                    <i class="fa-solid fa-check-circle text-emerald-500 text-xl"></i>
-                    <span class="font-medium">20 Years UK Passive Fire Protection Experience</span>
+                    <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                    <a href="https://www.infinityfireprevention.com/" target="_blank" rel="noopener noreferrer" class="hover:text-[#C9A227]">20 Years UK Expertise</a>
                 </div>
                 <div class="flex items-center gap-x-3">
-                    <i class="fa-solid fa-check-circle text-emerald-500 text-xl"></i>
-                    <span class="font-medium">Highly Competent Team of Engineers</span>
+                    <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                    <span>Independent &amp; Technically Rigorous</span>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- WHO WE ARE -->
-    <section class="section-padding max-w-screen-2xl mx-auto px-8">
-        <div class="max-w-3xl">
+    <section class="section-padding max-w-screen-2xl mx-auto px-8 fade-in bg-white">
+        <div class="max-w-3xl mx-auto text-center">
             <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">WHO WE ARE</div>
-            <h2 class="text-5xl tracking-tighter font-semibold leading-none mb-6">House of Expertise in Fire Consultancy</h2>
-
-            <div class="prose prose-lg text-slate-600 max-w-2xl space-y-5">
-                <p>Infinity Shield Fire Safety Consultancy LLC is a specialist consultancy firm providing expert guidance across the full spectrum of fire safety and compliance.</p>
-
-                <p>With 20 years of experience gained in the United Kingdom, we bring international best practice, rigorous technical standards, and world-class fire engineering knowledge to the UAE market.</p>
-
-                <p>Our consultancy services help clients design safer buildings, meet UAE Fire &amp; Life Safety Code requirements, and ensure complete lifecycle compliance from concept through to handover.</p>
-
+            <h2 class="text-5xl tracking-tighter font-semibold leading-none mb-6">Independent. Rigorous. Trusted.</h2>
+            
+            <div class="prose prose-lg text-slate-600 max-w-2xl mx-auto space-y-5">
+                <p>Infinity Shield Fire Safety Consultancy LLC is a specialist fire safety consultancy providing strategic advice and technical expertise across the full lifecycle of buildings and infrastructure.</p>
+                
+                <p>With deep roots in the United Kingdom’s rigorous fire safety standards, we bring international best practice, independent thinking, and world-class technical knowledge to the UAE market. 
+                <a href="https://www.infinityfireprevention.com/" target="_blank" rel="noopener noreferrer" class="text-[#C9A227] hover:underline">Learn more about our UK heritage →</a></p>
+                
+                <p>We work with developers, consultants, authorities, and facility managers who require clear, defensible, and technically sound fire safety strategies.</p>
+                
                 <p class="font-medium text-slate-700 italic">“Expert-led. Standards-driven. Compliance assured.”</p>
             </div>
         </div>
     </section>
 
     <!-- CORE SERVICES -->
-    <section id="services" class="section-padding bg-white border-y">
+    <section id="services" class="section-padding bg-[#FDF8F0]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="max-w-2xl mb-12">
                 <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">WHAT WE DELIVER</div>
@@ -153,139 +211,137 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-
-                <!-- Building Control -->
-                <div class="service-card bg-slate-50 border border-slate-200 rounded-3xl p-8">
-                    <div class="w-14 h-14 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-building text-3xl"></i>
+                <div class="service-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                    <div class="w-12 h-12 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-building text-2xl"></i>
                     </div>
-                    <h3 class="font-semibold text-2xl tracking-tight mb-4">Building Control &amp; Compliance</h3>
-                    <ul class="text-slate-600 space-y-2.5 text-[15px]">
-                        <li>Plan review and approval for passive and active fire systems</li>
-                        <li>On-site inspections to ensure installation matches design and standards</li>
-                        <li>Issue compliance certificates accepted by Civil Defence</li>
-                    </ul>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Building Control &amp; Compliance</h3>
+                    <p class="text-slate-600 leading-relaxed">Strategic plan review, design consultation, and regulatory engagement to secure approvals with confidence.</p>
                 </div>
 
-                <!-- Audit & Certification -->
-                <div class="service-card bg-slate-50 border border-slate-200 rounded-3xl p-8">
-                    <div class="w-14 h-14 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-clipboard-check text-3xl"></i>
+                <div class="service-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                    <div class="w-12 h-12 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-clipboard-check text-2xl"></i>
                     </div>
-                    <h3 class="font-semibold text-2xl tracking-tight mb-4">Audit &amp; Certification Services</h3>
-                    <ul class="text-slate-600 space-y-2.5 text-[15px]">
-                        <li>Fire doors inspection and certification</li>
-                        <li>Compartmentation surveys &amp; reporting</li>
-                        <li>Fire stopping verification</li>
-                        <li>Annual compliance auditing for buildings &amp; facilities</li>
-                    </ul>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Audit &amp; Certification</h3>
+                    <p class="text-slate-600 leading-relaxed">Independent audits, fire door certification, compartmentation assessments, and compliance reporting you can rely on.</p>
                 </div>
 
-                <!-- Training -->
-                <div class="service-card bg-slate-50 border border-slate-200 rounded-3xl p-8">
-                    <div class="w-14 h-14 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-graduation-cap text-3xl"></i>
+                <div class="service-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                    <div class="w-12 h-12 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
                     </div>
-                    <h3 class="font-semibold text-2xl tracking-tight mb-4">Training &amp; Knowledge Hub</h3>
-                    <ul class="text-slate-600 space-y-2.5 text-[15px]">
-                        <li>CPD-accredited training for consultants, contractors, and FM providers</li>
-                        <li>Emiratisation program to train UAE nationals in compliance and inspection</li>
-                        <li>Online platform for continuous professional development</li>
-                    </ul>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Training &amp; Knowledge</h3>
+                    <p class="text-slate-600 leading-relaxed">CPD-accredited programmes and Emiratisation initiatives designed to build internal capability and long-term compliance culture.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- REGULATORY & STANDARDS -->
-    <section id="regulatory" class="section-padding max-w-screen-2xl mx-auto px-8 bg-slate-50">
+    <section id="regulatory" class="section-padding max-w-screen-2xl mx-auto px-8 bg-white">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">OUR COMMITMENT</div>
-            <h2 class="text-5xl tracking-tighter font-semibold">Regulatory &amp; Standards Alignment</h2>
+            <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">OUR STANDARDS</div>
+            <h2 class="text-5xl tracking-tighter font-semibold">Committed to the highest levels of technical rigour</h2>
         </div>
 
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-            <div class="bg-white border border-slate-200 rounded-3xl p-8">
-                <h4 class="font-semibold text-xl mb-4">House of Expertise Recognition</h4>
-                <p class="text-slate-600">We are actively working with UAE Civil Defence to achieve official recognition as a **House of Expertise**, demonstrating our commitment to the highest levels of technical competence and regulatory compliance.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="reg-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <i class="fa-solid fa-award text-[#C9A227] text-2xl"></i>
+                    <h4 class="font-semibold text-xl">House of Expertise</h4>
+                </div>
+                <p class="text-slate-600">Recognised as a House of Expertise by Dubai Civil Defence, reflecting our technical excellence and regulatory leadership.</p>
             </div>
 
-            <div class="bg-white border border-slate-200 rounded-3xl p-8">
-                <h4 class="font-semibold text-xl mb-4">International Standards &amp; Certifications</h4>
-                <ul class="text-slate-600 space-y-2.5">
-                    <li>Partners with international certification bodies (IFC Certification, BM TRADA, UL, Warringtonfire)</li>
-                    <li>Adopted NFPA, BS/EN, and UAE Fire &amp; Life Safety Codes as benchmarks</li>
-                    <li>Working toward ISO accreditation (ISO 17020 – Inspection Bodies &amp; ISO 17025 – Testing Labs)</li>
-                </ul>
+            <div class="reg-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <i class="fa-solid fa-globe text-[#C9A227] text-2xl"></i>
+                    <h4 class="font-semibold text-xl">International Certification Bodies</h4>
+                </div>
+                <p class="text-slate-600">Partners with leading international certification bodies including IFC Certification, BM TRADA, UL, and Warringtonfire.</p>
+            </div>
+
+            <div class="reg-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <i class="fa-solid fa-file-alt text-[#C9A227] text-2xl"></i>
+                    <h4 class="font-semibold text-xl">Adopted Standards</h4>
+                </div>
+                <p class="text-slate-600">NFPA, BS/EN, and UAE Fire &amp; Life Safety Codes form our core technical benchmarks for all projects.</p>
+            </div>
+
+            <div class="reg-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <i class="fa-solid fa-certificate text-[#C9A227] text-2xl"></i>
+                    <h4 class="font-semibold text-xl">ISO Accredited</h4>
+                </div>
+                <p class="text-slate-600">ISO 17020 (Inspection Bodies) and ISO 17025 (Testing Laboratories) accredited, ensuring the highest standards in inspection and testing services.</p>
             </div>
         </div>
     </section>
 
-    <!-- PARTNERSHIPS -->
-    <section class="section-padding max-w-screen-2xl mx-auto px-8">
+    <!-- STRATEGIC PARTNERSHIPS -->
+    <section class="section-padding max-w-screen-2xl mx-auto px-8 bg-[#FDF8F0]">
         <div class="max-w-2xl mb-12">
             <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">COLLABORATION</div>
-            <h2 class="text-5xl tracking-tighter font-semibold">Partnerships &amp; Collaboration</h2>
+            <h2 class="text-5xl tracking-tighter font-semibold">Strategic Partnerships</h2>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white border border-slate-200 rounded-3xl p-7">
-                <div class="text-[#C9A227] text-2xl mb-4"><i class="fa-solid fa-landmark"></i></div>
+            <div class="partnership-card bg-white border border-slate-200 rounded-3xl p-7 fade-in">
+                <i class="fa-solid fa-landmark text-[#C9A227] text-2xl mb-4"></i>
                 <h4 class="font-semibold mb-2">Government &amp; Authorities</h4>
-                <p class="text-sm text-slate-600">Civil Defence, Municipalities, and Building Authorities across the UAE.</p>
+                <p class="text-sm text-slate-600">Working closely with Civil Defence, municipalities, and building authorities across the UAE.</p>
             </div>
-
-            <div class="bg-white border border-slate-200 rounded-3xl p-7">
-                <div class="text-[#C9A227] text-2xl mb-4"><i class="fa-solid fa-industry"></i></div>
+            <div class="partnership-card bg-white border border-slate-200 rounded-3xl p-7 fade-in">
+                <i class="fa-solid fa-industry text-[#C9A227] text-2xl mb-4"></i>
                 <h4 class="font-semibold mb-2">Product Manufacturers</h4>
-                <p class="text-sm text-slate-600">Strategic partnerships for training and installer approval (fire stopping, fire doors, coatings).</p>
+                <p class="text-sm text-slate-600">Strategic technical partnerships with leading manufacturers for training and system approval.</p>
             </div>
-
-            <div class="bg-white border border-slate-200 rounded-3xl p-7">
-                <div class="text-[#C9A227] text-2xl mb-4"><i class="fa-solid fa-university"></i></div>
-                <h4 class="font-semibold mb-2">Universities &amp; Training Centres</h4>
-                <p class="text-sm text-slate-600">Co-developing knowledge programs and professional courses with leading institutions.</p>
+            <div class="partnership-card bg-white border border-slate-200 rounded-3xl p-7 fade-in">
+                <i class="fa-solid fa-university text-[#C9A227] text-2xl mb-4"></i>
+                <h4 class="font-semibold mb-2">Academic &amp; Training Institutions</h4>
+                <p class="text-sm text-slate-600">Collaborating with universities to develop high-quality training and Emiratisation programmes.</p>
             </div>
-
-            <div class="bg-white border border-slate-200 rounded-3xl p-7">
-                <div class="text-[#C9A227] text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                <h4 class="font-semibold mb-2">Insurance Companies</h4>
-                <p class="text-sm text-slate-600">Collaborating to improve risk assessment and fire safety standards across insured properties.</p>
+            <div class="partnership-card bg-white border border-slate-200 rounded-3xl p-7 fade-in">
+                <i class="fa-solid fa-shield-halved text-[#C9A227] text-2xl mb-4"></i>
+                <h4 class="font-semibold mb-2">Insurance &amp; Risk Partners</h4>
+                <p class="text-sm text-slate-600">Supporting insurers and risk managers with technical insight and compliance clarity.</p>
             </div>
         </div>
     </section>
 
-    <!-- OUR APPROACH -->
+    <!-- OUR METHOD -->
     <section class="section-padding max-w-screen-2xl mx-auto px-8 bg-white border-y">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div>
                 <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">OUR METHOD</div>
                 <h2 class="text-5xl tracking-tighter font-semibold leading-none mb-6">A clear, proven process from brief to approval.</h2>
             </div>
-
-            <div class="space-y-8">
-                <div class="flex gap-6">
+            
+            <div class="space-y-3">
+                <div class="process-step flex gap-6 items-start">
                     <div class="w-12 h-12 flex-shrink-0 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center font-mono text-xl font-semibold">01</div>
                     <div>
                         <div class="font-semibold text-xl mb-1">Discover &amp; Assess</div>
                         <p class="text-slate-600">Detailed review of drawings, site conditions, occupancy, and regulatory requirements.</p>
                     </div>
                 </div>
-                <div class="flex gap-6">
+                <div class="process-step flex gap-6 items-start">
                     <div class="w-12 h-12 flex-shrink-0 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center font-mono text-xl font-semibold">02</div>
                     <div>
                         <div class="font-semibold text-xl mb-1">Develop Strategy</div>
                         <p class="text-slate-600">Create tailored fire strategy, risk assessments, and DCD-compliant documentation.</p>
                     </div>
                 </div>
-                <div class="flex gap-6">
+                <div class="process-step flex gap-6 items-start">
                     <div class="w-12 h-12 flex-shrink-0 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center font-mono text-xl font-semibold">03</div>
                     <div>
                         <div class="font-semibold text-xl mb-1">Validate &amp; Submit</div>
                         <p class="text-slate-600">Liaise with authorities, manage submissions, and secure necessary approvals.</p>
                     </div>
                 </div>
-                <div class="flex gap-6">
+                <div class="process-step flex gap-6 items-start">
                     <div class="w-12 h-12 flex-shrink-0 bg-[#C9A227]/10 text-[#C9A227] rounded-2xl flex items-center justify-center font-mono text-xl font-semibold">04</div>
                     <div>
                         <div class="font-semibold text-xl mb-1">Support Delivery</div>
@@ -297,7 +353,7 @@
     </section>
 
     <!-- RECENT ACTIVITIES -->
-    <section id="activities" class="section-padding max-w-screen-2xl mx-auto px-8">
+    <section id="activities" class="section-padding max-w-screen-2xl mx-auto px-8 bg-[#FDF8F0]">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
             <div>
                 <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">WHAT'S NEW</div>
@@ -306,11 +362,9 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- Intersec -->
-            <div class="activity-card bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden">
+            <div class="activity-card bg-white border border-slate-200 rounded-3xl overflow-hidden fade-in">
                 <div class="h-48 bg-slate-200">
-                    <img src="assets/images/intersec-2026-team.jpg" alt="Infinity Shield team at Intersec 2026" class="w-full h-full object-cover">
+                    <img src="assets/images/intersec-2026-team.webp" alt="Infinity Shield team at Intersec 2026" class="w-full h-full object-cover">
                 </div>
                 <div class="p-7">
                     <div class="flex items-center gap-x-2 text-xs text-[#C9A227] font-semibold tracking-wider mb-3">
@@ -318,21 +372,27 @@
                         <span class="px-2.5 py-0.5 bg-[#C9A227]/10 rounded-full text-[10px]">EXHIBITION</span>
                     </div>
                     <h3 class="font-semibold text-xl tracking-tight mb-3">Intersec 2026 – Dubai</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Our team participated in Intersec 2026, engaging with developers, consultants, and authorities over three days while showcasing our expertise in passive fire protection and compliance solutions.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Our team participated in Intersec 2026, engaging with developers, consultants, and authorities while showcasing our expertise in strategic fire safety consultancy.</p>
                 </div>
             </div>
 
-            <!-- UK Heritage -->
-            <div class="activity-card bg-slate-50 border border-slate-200 rounded-3xl p-7">
-                <div class="text-xs text-[#C9A227] font-semibold tracking-wider mb-3">HERITAGE &amp; TEAM</div>
-                <h3 class="font-semibold text-xl tracking-tight mb-4">20 Years of UK Excellence</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Our foundation is built on the proven track record of Infinity Fire Prevention in the United Kingdom. For two decades we have delivered high-quality passive fire protection solutions to the highest UK standards, supported by a highly competent team of engineers and specialists.</p>
+            <div class="activity-card bg-white border border-slate-200 rounded-3xl overflow-hidden fade-in">
+                <div class="h-48 bg-slate-200">
+                    <img src="assets/images/uk-heritage.webp" alt="Infinity Shield UK Heritage & Expertise" class="w-full h-full object-cover">
+                </div>
+                <div class="p-7">
+                    <div class="flex items-center gap-x-2 text-xs text-[#C9A227] font-semibold tracking-wider mb-3">
+                        <span>UK HERITAGE</span>
+                    </div>
+                    <h3 class="font-semibold text-xl tracking-tight mb-3">20 Years of UK Excellence</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Our foundation is built on the proven track record of <a href="https://www.infinityfireprevention.com/" target="_blank" rel="noopener noreferrer" class="text-[#C9A227] hover:underline">Infinity Fire Prevention UK</a>. We bring independent thinking and technically rigorous standards developed over two decades.</p>
+                </div>
             </div>
 
-            <div class="activity-card bg-slate-50 border border-slate-200 rounded-3xl p-7 flex flex-col justify-center items-center text-center">
+            <div class="activity-card bg-white border border-slate-200 rounded-3xl p-7 flex flex-col justify-center items-center text-center fade-in">
                 <div class="text-[#C9A227] mb-4"><i class="fa-solid fa-newspaper text-4xl"></i></div>
                 <h3 class="font-semibold text-lg mb-2">More Updates Coming Soon</h3>
-                <p class="text-sm text-slate-600">We regularly share project highlights, technical insights, and compliance updates from across the UAE and UK.</p>
+                <p class="text-sm text-slate-600">We regularly share technical insights, project learnings, and regulatory updates from across the UAE and UK.</p>
             </div>
         </div>
     </section>
@@ -341,27 +401,33 @@
     <section id="why-us" class="section-padding max-w-screen-2xl mx-auto px-8 bg-white border-y">
         <div class="max-w-3xl mx-auto text-center mb-14">
             <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">THE INFINITY SHIELD DIFFERENCE</div>
-            <h2 class="text-5xl tracking-tighter font-semibold">UK standards.<br>Local delivery.<br>Engineering excellence.</h2>
+            <h2 class="text-5xl tracking-tighter font-semibold">UK standards.<br>Independent advice.<br>Technical excellence.</h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
-                <h4 class="font-semibold text-xl mb-3">20 Years UK Passive Fire Protection Heritage</h4>
-                <p class="text-slate-600">Direct access to the established expertise of Infinity Fire Prevention, developed over two decades in the United Kingdom to the highest standards.</p>
+            <div class="why-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                <i class="fa-solid fa-globe text-[#C9A227] text-3xl mb-5"></i>
+                <h4 class="font-semibold text-xl mb-3">20 Years UK Fire Safety Heritage</h4>
+                <p class="text-slate-600">Direct access to the established expertise and rigorous standards developed by <a href="https://www.infinityfireprevention.com/" target="_blank" rel="noopener noreferrer" class="text-[#C9A227] hover:underline">Infinity Fire Prevention UK</a> over two decades.</p>
             </div>
-            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
-                <h4 class="font-semibold text-xl mb-3">Highly Competent Team of Engineers</h4>
-                <p class="text-slate-600">Our strength lies in our people. We combine deep technical knowledge with practical, on-site experience to deliver reliable and compliant solutions.</p>
+
+            <div class="why-card bg-white border border-slate-200 rounded-3xl p-8 fade-in">
+                <i class="fa-solid fa-balance-scale text-[#C9A227] text-3xl mb-5"></i>
+                <h4 class="font-semibold text-xl mb-3">Independent &amp; Technically Rigorous</h4>
+                <p class="text-slate-600">We provide independent advice focused on technical accuracy, risk reduction, and regulatory compliance rather than product sales.</p>
             </div>
-            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
-                <h4 class="font-semibold text-xl mb-3">Seamless End-to-End Delivery</h4>
+
+            <a href="https://iinfinitydev.github.io/infinityshieldtechnical/" 
+               class="why-card bg-white border border-slate-200 rounded-3xl p-8 fade-in block hover:border-[#C9A227]/50 transition-colors">
+                <i class="fa-solid fa-link text-[#C9A227] text-3xl mb-5"></i>
+                <h4 class="font-semibold text-xl mb-3">Seamless Group Capability</h4>
                 <p class="text-slate-600">From strategic consultancy through to installation and maintenance via our Technical Services division — all under one trusted group.</p>
-            </div>
+            </a>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section-padding max-w-screen-2xl mx-auto px-8">
+    <section id="contact" class="section-padding max-w-screen-2xl mx-auto px-8 bg-[#FDF8F0]">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-12">
                 <div class="uppercase tracking-[3px] text-[#C9A227] text-xs font-semibold mb-3">LET'S TALK</div>
@@ -380,7 +446,7 @@
                         <input type="text" id="company" name="company" required class="w-full px-5 py-3.5 border border-slate-300 rounded-2xl focus:outline-none focus:border-[#C9A227]">
                     </div>
                 </div>
-
+                
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label for="email" class="block text-sm font-medium mb-1.5">Email Address</label>
@@ -408,88 +474,63 @@
                     <textarea id="message" name="message" rows="5" class="w-full px-5 py-3.5 border border-slate-300 rounded-3xl focus:outline-none focus:border-[#C9A227]" placeholder="Tell us about your project..."></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-4 bg-slate-900 hover:bg-black text-white font-semibold rounded-3xl text-lg transition-all">
+                <button type="submit" class="w-full py-4 bg-[#C9A227] hover:bg-[#B8971F] text-white font-semibold rounded-3xl text-lg transition-all">
                     Submit Request
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- 3-COLUMN FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 text-sm">
+    <!-- FOOTER -->
+    <footer class="bg-white text-slate-600 text-sm border-t">
         <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-8">
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
                 
-                <!-- LEFT: Logos -->
                 <div>
-                    <div class="text-xs text-slate-400 mb-4 tracking-wider">PART OF INFINITY SHIELD FIRE GROUP</div>
-                    
-                    <div class="flex flex-col gap-y-5">
-                        
-                        <!-- Consultancy -->
+                    <div class="text-xs text-slate-500 mb-4 tracking-wider">PART OF INFINITY SHIELD FIRE GROUP</div>
+                    <div class="flex flex-col gap-y-4">
                         <a href="https://iinfinitydev.github.io/infinityshieldconsultancy/" class="flex items-center gap-x-3 group">
-                            <img src="assets/logos/consultancy-logo-white.png" 
-                                alt="Infinity Shield Fire Safety Consultancy" 
-                                class="h-9 w-auto group-hover:opacity-80 transition-opacity">
-                            <span class="text-sm text-white group-hover:text-[#C9A227] transition-colors">
-                                Infinity Shield Fire Safety Consultancy LLC
-                            </span>
+                            <img src="assets/logos/consultancy-logo.png" alt="Consultancy" class="h-9 w-auto group-hover:opacity-80 transition-opacity flex-shrink-0">
+                            <span class="text-sm text-slate-700 group-hover:text-[#C9A227] transition-colors">Infinity Shield Fire Safety Consultancy LLC</span>
                         </a>
-
-                        <!-- Technical Services -->
                         <a href="https://iinfinitydev.github.io/infinityshieldtechnical/" class="flex items-center gap-x-3 group">
-                            <img src="assets/logos/technical-logo-white.png" 
-                                alt="Infinity Shield Technical Services" 
-                                class="h-9 w-auto group-hover:opacity-80 transition-opacity">
-                            <span class="text-sm text-white group-hover:text-[#C9A227] transition-colors">
-                                Infinity Shield Technical Services LLC
-                            </span>
+                            <img src="assets/logos/technical-logo.png" alt="Technical Services" class="h-9 w-auto group-hover:opacity-80 transition-opacity flex-shrink-0">
+                            <span class="text-sm text-slate-700 group-hover:text-[#C9A227] transition-colors">Infinity Shield Technical Services LLC</span>
                         </a>
-
-                        <!-- UK -->
-                        <a href="https://www.infinityfireprevention.com/" target="_blank" rel="noopener noreferrer" 
-                        class="flex items-center gap-x-3 group">
-                            <img src="assets/logos/uk-logo-white.png" 
-                                alt="Infinity Fire Prevention UK" 
-                                class="h-9 w-auto group-hover:opacity-80 transition-opacity">
-                            <span class="text-sm text-white group-hover:text-[#C9A227] transition-colors">
-                                Infinity Fire Prevention UK
-                            </span>
+                        <a href="https://www.infinityfireprevention.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-x-3 group">
+                            <img src="assets/logos/uk-logo-white.png" alt="UK" class="h-9 w-auto group-hover:opacity-80 transition-opacity flex-shrink-0">
+                            <span class="text-sm text-slate-700 group-hover:text-[#C9A227] transition-colors">Infinity Fire Prevention UK</span>
                         </a>
-
                     </div>
                 </div>
 
-                <!-- CENTRE: Services (Clickable) -->
                 <div>
-                    <div class="font-medium text-white mb-3 tracking-wider text-xs">SERVICES</div>
+                    <div class="font-medium text-slate-700 mb-3 tracking-wider text-xs">SERVICES</div>
                     <div class="space-y-1.5 text-sm">
-                        <a href="#services" class="hover:text-white block">Fire Risk Assessments</a>
-                        <a href="#services" class="hover:text-white block">Fire Strategy &amp; Compliance</a>
-                        <a href="#services" class="hover:text-white block">DCD Approval Support</a>
-                        <a href="#services" class="hover:text-white block">Audit &amp; Certification Services</a>
-                        <a href="#services" class="hover:text-white block">Training &amp; Knowledge Hub</a>
+                        <a href="#services" class="hover:text-[#C9A227] block">Fire Risk Assessments</a>
+                        <a href="#services" class="hover:text-[#C9A227] block">Fire Strategy &amp; Compliance</a>
+                        <a href="#services" class="hover:text-[#C9A227] block">DCD Approval Support</a>
+                        <a href="#services" class="hover:text-[#C9A227] block">Audit &amp; Certification Services</a>
+                        <a href="#services" class="hover:text-[#C9A227] block">Training &amp; Knowledge Hub</a>
                     </div>
                 </div>
 
-                <!-- RIGHT: Contact (Clickable) -->
                 <div>
-                    <div class="font-medium text-white mb-3 tracking-wider text-xs">CONTACT</div>
+                    <div class="font-medium text-slate-700 mb-3 tracking-wider text-xs">CONTACT</div>
                     <div class="space-y-1.5 text-sm">
-                        <a href="mailto:info@infinityshieldconsultancy.ae" class="hover:text-white block">info@infinityshieldconsultancy.ae</a>
-                        <a href="tel:+971XXXXXXXXX" class="hover:text-white block">+971 XX XXX XXXX</a>
+                        <a href="mailto:info@infinityshieldconsultancy.ae" class="hover:text-[#C9A227] block">info@infinityshieldconsultancy.ae</a>
+                        <a href="tel:+971XXXXXXXXX" class="hover:text-[#C9A227] block">+971 XX XXX XXXX</a>
                         <div>Dubai, United Arab Emirates</div>
                     </div>
                 </div>
-
             </div>
+        </div>
 
-            <!-- Copyright (Centered) -->
-            <div class="mt-10 pt-6 border-t border-white/10 text-center text-xs text-slate-500">
-                © 2026 Infinity Shield Fire Safety Consultancy LLC. All rights reserved.
-            </div>
+        <div class="gold-strip w-full"></div>
 
+        <div class="text-center py-5 text-xs text-slate-500 border-t">
+            © 2026 Infinity Shield Fire Safety Consultancy LLC. All rights reserved.
         </div>
     </footer>
 
@@ -500,11 +541,11 @@
                 navbar.classList.toggle('nav-scrolled', window.scrollY > 20);
             });
         }
-
+        
         function initMobileMenu() {
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
-
+            
             btn.addEventListener('click', () => {
                 menu.classList.toggle('hidden');
                 const icon = btn.querySelector('i');
@@ -512,7 +553,7 @@
                 icon.classList.toggle('fa-times');
             });
         }
-
+        
         function initContactForm() {
             const form = document.getElementById('consultancy-form');
             form.addEventListener('submit', function(e) {
@@ -535,10 +576,25 @@
             });
         }
 
+        function initScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            elements.forEach(el => observer.observe(el));
+        }
+        
         window.onload = function() {
             initNavbar();
             initMobileMenu();
             initContactForm();
+            initScrollAnimations();
         }
     </script>
 </body>
